@@ -20,7 +20,8 @@ void MainWindow::executecommand()
     qp->start(ui->lineEdit->text());
     while (qp->waitForFinished());
     QByteArray result=qp->readAll();
-    ui->plainTextEdit->setPlainText(QString(result));
+    ui->plainTextEdit->setPlainText(ui->plainTextEdit->toPlainText().append(result));
+    ui->lineEdit->clear();
 }
 
 void MainWindow::addTab(QString caption)

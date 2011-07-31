@@ -16,11 +16,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::executecommand()
 {
+    QString command=ui->lineEdit->text();
     QProcess *qp = new QProcess(0);
-    qp->start(ui->lineEdit->text());
+    ui->plainTextEdit->appendPlainText(QString("$ ").append(command));
+    qp->start(command);
     while (qp->waitForFinished());
     QByteArray result=qp->readAll();
-    ui->plainTextEdit->setPlainText(ui->plainTextEdit->toPlainText().append(result));
+    ui->plainTextEdit->appendPlainText(result);
     ui->lineEdit->clear();
 }
 

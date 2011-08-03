@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::executecommand()
 {
     QProcess *qp = new QProcess(0);
-    qp->start(QString("ls -l"));
+    qp->start(ui->lineEdit->text());
     while (qp->waitForFinished());
     QByteArray result=qp->readAll();
     ui->plainTextEdit->setPlainText(QString(result));

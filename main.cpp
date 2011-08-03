@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     qDebug() << "argc is " << argc;
     argc=argc-2;
+    int tabnumber=1;
     while (argc>0)
     {
         qDebug() << "argc is " << argc;

@@ -29,6 +29,15 @@ void MainWindow::addTab()
     tab->setObjectName(QString::fromUtf8("tab"));
     ui->tabWidget->addTab(tab,QString());
 
+    QGridLayout* qglo = new QGridLayout(tab);
+    qglo->setSpacing(6);
+    qglo->setContentsMargins(11, 11, 11, 11);
+    qglo->setObjectName(QString::fromUtf8("gridLayout_2"));
+    QPlainTextEdit* plainTextEdit = new QPlainTextEdit(tab);
+    plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+
+    qglo->addWidget(plainTextEdit, 0, 0, 1, 1);
+
 }
 
 void MainWindow::on_pushButton_clicked()

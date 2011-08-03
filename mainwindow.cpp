@@ -23,6 +23,14 @@ void MainWindow::executecommand()
     ui->plainTextEdit->setPlainText(QString(result));
 }
 
+void MainWindow::addTab()
+{
+    QWidget* tab=new QWidget();
+    tab->setObjectName(QString::fromUtf8("tab"));
+    ui->tabWidget->addTab(tab,QString());
+
+}
+
 void MainWindow::on_pushButton_clicked()
 {
     executecommand();

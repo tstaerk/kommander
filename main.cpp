@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     while (argc>0)
     {
         qDebug() << "argc is " << argc;
-        w.addTab();
+        w.addTab(QString(argv[tabnumber++]));
         argc--;
     }
     w.show();

@@ -23,7 +23,7 @@ void MainWindow::executecommand()
     ui->plainTextEdit->setPlainText(QString(result));
 }
 
-void MainWindow::addTab()
+void MainWindow::addTab(QString caption)
 {
     QWidget* tab=new QWidget();
     tab->setObjectName(QString::fromUtf8("tab"));
@@ -35,7 +35,7 @@ void MainWindow::addTab()
     qglo->setObjectName(QString::fromUtf8("gridLayout_2"));
     QPlainTextEdit* plainTextEdit = new QPlainTextEdit(tab);
     plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-
+    ui->tabWidget->setTabText(ui->tabWidget->indexOf(tab),caption);
     qglo->addWidget(plainTextEdit, 0, 0, 1, 1);
 
 }

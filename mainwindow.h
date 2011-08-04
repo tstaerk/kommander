@@ -13,7 +13,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    void addTab();
+    void addTab(QString caption);
     ~MainWindow();
 
 private slots:
